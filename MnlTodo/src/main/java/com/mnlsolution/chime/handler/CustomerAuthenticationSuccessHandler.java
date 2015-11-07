@@ -31,9 +31,10 @@ public class CustomerAuthenticationSuccessHandler implements AuthenticationSucce
 			Authentication authentication) throws IOException, ServletException {
 		
 		logger.info("***** 로그인 기록 {} {}", request.getParameter("loginid"), request.getParameter("password") );
+		String loginidVal = request.getParameter("loginid"); 
 		
 		Loginhistory  loginhistory = new Loginhistory();
-		loginhistory.setLoginId(request.getParameter("loginid"));
+		loginhistory.setLoginId(loginidVal);
 		loginhistory.setStatusCode("LOGIN");		
 		
 		loginhistoryService.insertLoginHistory(loginhistory);

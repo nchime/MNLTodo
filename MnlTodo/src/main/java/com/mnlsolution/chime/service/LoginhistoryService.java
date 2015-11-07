@@ -9,18 +9,13 @@ import com.mnlsolution.chime.repository.LoginhistoryRepository;
 @Service
 public class LoginhistoryService {
 	
-	
 	@Autowired
 	private LoginhistoryRepository lhRepository;
-	
 	
 	public void insertLoginHistory(Loginhistory loginhistory) { 
 
 		lhRepository.save(loginhistory); 
-		
 	}
-
-	
 
 
 }
