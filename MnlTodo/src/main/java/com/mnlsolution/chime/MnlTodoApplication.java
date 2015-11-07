@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
 import com.mnlsolution.chime.model.Useraccount;
 import com.mnlsolution.chime.repository.UserAccountRepository;
@@ -15,6 +16,7 @@ import com.mnlsolution.chime.repository.UserAccountRepository;
 @Configuration
 @EnableAutoConfiguration
 @ComponentScan
+@PropertySource("config.properties")
 public class MnlTodoApplication {
 
     public static void main(String[] args) {

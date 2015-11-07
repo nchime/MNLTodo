@@ -1,5 +1,7 @@
 package com.mnlsolution.chime.model;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,6 +12,7 @@ public class Useraccount {
 
 	@Id
 	@GeneratedValue
+	@Column(name = "useridx")
 	private Long userIdx;
 
 	@Column(name = "loginid", unique = true, length = 20)
@@ -25,10 +28,10 @@ public class Useraccount {
 	private String eMail;
 
 	@Column(name = "regdate", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-	private String regDate;
+	private Date regDate;
 
 	@Column(name = "upddate")
-	private String updDate;
+	private Date updDate;
 
 	public String getLoginId() {
 		return loginId;
@@ -62,19 +65,19 @@ public class Useraccount {
 		this.eMail = eMail;
 	}
 
-	public String getRegDate() {
+	public Date getRegDate() {
 		return regDate;
 	}
 
-	public void setRegDate(String regDate) {
+	public void setRegDate(Date regDate) {
 		this.regDate = regDate;
 	}
 
-	public String getUpdDate() {
+	public Date getUpdDate() {
 		return updDate;
 	}
 
-	public void setUpdDate(String updDate) {
+	public void setUpdDate(Date updDate) {
 		this.updDate = updDate;
 	}
 
