@@ -34,9 +34,7 @@ public class LoginhistoryService {
 		if(loginhistory.getStatusCode().equals("LOGIN")) { 
 			
 //			UseraccountDetail userDetail =  (UseraccountDetail) authentication.getPrincipal();
-			
 			Useraccount useraccount = uaRepository.findByloginId(loginhistory.getLoginId());
-			
 			
 			Date date = new Date();
 			Timestamp timestamp = new Timestamp(date.getTime());  
@@ -44,7 +42,6 @@ public class LoginhistoryService {
 
 			logger.info("-------------{} {} {}", useraccount.getLoginId(), useraccount.getRegDate(), timestamp);
 			uaRepository.save(useraccount); 
-
 			
 		}
 		
