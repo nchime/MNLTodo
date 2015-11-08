@@ -18,11 +18,8 @@ import com.mnlsolution.chime.service.LoginhistoryService;
 
 public class CustomerAuthenticationSuccessHandler implements AuthenticationSuccessHandler {
 	
-	
 	@Autowired
 	LoginhistoryService loginhistoryService;  
-	
-	
 	
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -37,7 +34,7 @@ public class CustomerAuthenticationSuccessHandler implements AuthenticationSucce
 		loginhistory.setLoginId(loginidVal);
 		loginhistory.setStatusCode("LOGIN");		
 		
-		loginhistoryService.insertLoginHistory(loginhistory);
+		loginhistoryService.insertLoginHistory(loginhistory, authentication);
 		
 		response.sendRedirect("/main/todolist");
 	}

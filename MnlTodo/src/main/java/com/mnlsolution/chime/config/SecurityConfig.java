@@ -35,6 +35,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		
 		auth.inMemoryAuthentication().withUser("chime").password("1234").roles("ADMIN")
 		.and().withUser("test").password("1234").roles("USER");
+
+//		auth.jdbcAuthentication().dataSource(dataSource);
+		
+//		auth.userDetailsService(userDetailsService); 
 		
 	}
 	

@@ -30,7 +30,7 @@ public class Useraccount {
 	@Column(name = "regdate", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
 	private Date regDate;
 
-	@Column(name = "upddate")
+	@Column(name = "upddate", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
 	private Date updDate;
 
 	public String getLoginId() {

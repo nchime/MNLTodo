@@ -35,7 +35,7 @@ public class CustomerLogoutSuccessHandler implements LogoutSuccessHandler  {
 		loginhistory.setLoginId(loginidVal);
 		loginhistory.setStatusCode("LOGOUT");		
 		
-		loginhistoryService.insertLoginHistory(loginhistory);
+		loginhistoryService.insertLoginHistory(loginhistory, authentication);		
 		
 		response.sendRedirect("/");
 

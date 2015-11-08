@@ -7,6 +7,8 @@ import com.mnlsolution.chime.model.Useraccount;
 
 public interface UserAccountRepository extends JpaRepository<Useraccount, Long>{
 	
+	public Useraccount findByloginId(String loginId);
+	
 	
 
 }
