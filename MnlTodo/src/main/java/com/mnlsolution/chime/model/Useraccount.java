@@ -27,10 +27,12 @@ public class Useraccount {
 	@Column(name = "email", nullable = false, length = 50)
 	private String eMail;
 
-	@Column(name = "regdate", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+//	@Column(name = "regdate", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+	@Column(name = "regdate")
 	private Date regDate;
 
-	@Column(name = "upddate", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+//	@Column(name = "upddate", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+	@Column(name = "upddate")	
 	private Date updDate;
 
 	public String getLoginId() {

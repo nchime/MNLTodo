@@ -2,16 +2,23 @@ package com.mnlsolution.chime.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.mnlsolution.chime.repository.UserAccountRepository;
 
 @Controller
 @RequestMapping("/")
 public class LoginController {
 	
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
+	
+	@Autowired
+	UserAccountRepository userAccountRepository; 
+	
 	
 	@RequestMapping("/")
 	public String home() {
@@ -31,6 +38,8 @@ public class LoginController {
 	public String todolist() {
 		logger.info(">>>>>> todolist Controller");
 		
+		logger.info("query 결과 : {}", userAccountRepository.findByCustomQueryName("chime"));
+		
 		return "todolist";
 	}
 
@@ -40,13 +49,6 @@ public class LoginController {
 		logger.info(">>>>>> logout Controller");
 		
 	}
-
-	
-	
-	
-	
-	
-	
 	
 	
 	
